@@ -4,18 +4,24 @@ phases:
   install:
     commands:
       - echo install phase started
+    finally:
+      - echo This always runs even if the update or install command fails 
   pre_build:
     commands:
       - echo pre_build phase started
-      - echo Test started on `date`
+    finally:
+      - echo This always runs even if the login command fails 
   build:
     commands:
       - echo build phase started
       - echo Build started on `date`
+      - mvn install
+    finally:
+      - echo This always runs even if the install command fails
   post_build:
     commands:
-      - echo post build phase started
-      - echo Post Build started on `date`
-  artifacts:
-    files:
-      - MongoDbCurdDemo*.jar
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - MongoDbCurdDemo*.jar
