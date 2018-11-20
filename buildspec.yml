@@ -17,7 +17,5 @@ phases:
       - echo post build phase started
       - echo Post Build started on `date`
   artifacts:
-  files:
-    - MongoDbCurdDemo*.jar
-
-      
+    files:
+      - MongoDbCurdDemo*.jar
