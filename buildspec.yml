@@ -12,7 +12,7 @@ phases:
     commands:
       - echo build phase started
       - echo Build started on `date`
-  post build:
+  post_build:
     commands:
       - echo post build phase started
       - echo Post Build started on `date`
